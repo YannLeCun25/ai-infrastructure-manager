@@ -1,0 +1,10 @@
+cluster:
+  name: "ELITE-AI-CLUSTER-01"
+  region: "us-east-1"
+  nodes:
+    - type: "g5.48xlarge"
+      count: 16
+      gpus_per_node: 8
+  optimization:
+    strategy: "minimal-latency"
+    auto_scale: true
