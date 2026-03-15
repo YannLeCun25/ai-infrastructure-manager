@@ -1,12 +1,9 @@
-import logging
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from scheduler import GPUScheduler
 
 def main():
-    logger.info("Initializing AI Infrastructure Manager...")
-    # Production-grade AI logic goes here
-    print("System Running.")
+    cluster = GPUScheduler(num_gpus=8)
+    print(cluster.allocate("ResNet-50-Training"))
+    print(cluster.allocate("GPT-4-Inference"))
 
 if __name__ == "__main__":
     main()
